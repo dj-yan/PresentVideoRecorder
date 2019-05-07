@@ -44,8 +44,23 @@
         </Grid>
         <CheckBox Content="录制摄像头视频" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True"></CheckBox>
         <CheckBox Content="录制桌面视频" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True"></CheckBox>
+        <Border x:Name="visualContainer" 
+                BorderBrush="White" 
+                BorderThickness="1" 
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch" 
+                Grid.Row="3"
+                Grid.Column="1"/>
+        <!--<MediaElement x:Name="mediaPlayer"  
+                      AutoPlay="True"
+                VerticalAlignment="Stretch"
+                      AreTransportControlsEnabled="True"
+                       
+                HorizontalAlignment="Stretch" Grid.Row="3"/>-->
+
+
         <Image Source="/Assets/wb070323054.jpg" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Margin="20,0"></Image>
-        <Image Source="/Assets/thET3NKEB5.jpg" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Margin="20,0"></Image>
+        <!--<Image x:Name="desktopPlayer" Source="/Assets/thET3NKEB5.jpg" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Margin="20,0"></Image>-->
         <Grid Grid.Row="4" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120"></ColumnDefinition>
@@ -75,7 +90,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="24">
+            <Button x:Name="buttonStart" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="24" Click="buttonStart_Click" >
                 <Button.Content>
                     <Grid HorizontalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
@@ -83,11 +98,12 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <SymbolIcon Symbol ="Video" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></SymbolIcon>
-                        <TextBlock Text="开始录像" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="开始录像" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0"></TextBlock>
                     </Grid>
                 </Button.Content>
             </Button>
-            <Button Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="24">
+            <Button x:Name="buttonPause" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="24"
+                    Click="buttonPause_Click">
                 <Button.Content>
                     <Grid HorizontalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
@@ -95,11 +111,11 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <SymbolIcon Symbol="Pause"  Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></SymbolIcon>
-                        <TextBlock Text="暂停录像" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="buttonPauseText" Text="暂停录像" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Grid>
                 </Button.Content>
             </Button>
-            <Button Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="24">
+            <Button x:Name="buttonStop" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="24" Click="buttonStop_Click">
                 <Button.Content>
                     <Grid HorizontalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
